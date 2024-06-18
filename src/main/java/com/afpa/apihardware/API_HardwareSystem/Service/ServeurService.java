@@ -1,6 +1,6 @@
 package com.afpa.apihardware.API_HardwareSystem.Service;
 
-import com.afpa.apihardware.API_HardwareSystem.Repository.ServeurRepository;
+import com.afpa.apihardware.API_HardwareSystem.Repository.Serveur;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
@@ -11,24 +11,24 @@ import java.util.Random;
 @Service
 public class ServeurService {
 
-    private final List<ServeurRepository> ServeurRepository = new ArrayList<>();
+    private final List<Serveur> Serveur = new ArrayList<>();
     private final Random random = new Random();
 
     public ServeurService() {
         // Initialisation des données simulées
-        ServeurRepository.add(new ServeurRepository(1L, "ServeurRepository 1", "192.168.1.1", "Actif", random.nextDouble() * 100));
-        ServeurRepository.add(new ServeurRepository(2L, "ServeurRepository 2", "192.168.1.2", "Inactif", random.nextDouble() * 100));
-        ServeurRepository.add(new ServeurRepository(3L, "ServeurRepository 3", "192.168.1.3", "Actif", random.nextDouble() * 100));
+        Serveur.add(new Serveur(1L, "ServeurRepository 1", "192.168.1.1", "Actif", random.nextDouble() * 100));
+        Serveur.add(new Serveur(2L, "ServeurRepository 2", "192.168.1.2", "Inactif", random.nextDouble() * 100));
+        Serveur.add(new Serveur(3L, "ServeurRepository 3", "192.168.1.3", "Actif", random.nextDouble() * 100));
     }
 
-    public List<ServeurRepository> getAllServeursRepository() {
-        return ServeurRepository;
+    public List<Serveur> getAllServeursRepository() {
+        return Serveur;
     }
 
-    public ServeurRepository getServeurRepositoryById(Long id) {
+    public Serveur getServeurRepositoryById(Long id) {
         // Exemple de méthode pour récupérer un ServeurRepository par son ID
-        return ServeurRepository.stream()
-                .filter(ServeurRepository -> ServeurRepository.getId().equals(id))
+        return Serveur.stream()
+                .filter(Serveur -> Serveur.getId().equals(id))
                 .findFirst()
                 .orElse(null);
     }
@@ -40,7 +40,7 @@ public class ServeurService {
     @Scheduled(fixedRate = 5000)
     public void updateServeurRepositoryChargeCpu() {
         // Exemple de méthode pour mettre à jour la charge CPU de manière simulée
-        for (ServeurRepository Serveur : ServeurRepository) {
+        for (com.afpa.apihardware.API_HardwareSystem.Repository.Serveur Serveur : Serveur) {
             double chargeCpu = random.nextDouble() * 80 + 20;
             Serveur.setChargeCpu(roundToOneDecimal(chargeCpu));
         }

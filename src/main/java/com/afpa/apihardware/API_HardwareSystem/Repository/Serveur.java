@@ -5,7 +5,7 @@ import lombok.NoArgsConstructor;
 
 @NoArgsConstructor
 @AllArgsConstructor
-public class ServeurRepository {
+public class Serveur {
 
         private Long id;
         private String nom;
