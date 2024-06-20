@@ -10,11 +10,7 @@ public class Serveur {
         private Long id;
         private String nom;
         private String adresseIp;
-<<<<<<< HEAD
         private String state;
-=======
-        private String statut;
->>>>>>> 950d9053b789bdde0fc7c020b2e11f6d2cf027d7
         private double chargeCpu;
 
 
@@ -41,22 +37,13 @@ public class Serveur {
         public void setAdresseIp(String adresseIp) {
             this.adresseIp = adresseIp;
         }
-
-<<<<<<< HEAD
         public String getState() {
             return state;
         }
 
         public void setState(String state) {
             this.state = state;
-=======
-        public String getStatut() {
-            return statut;
-        }
 
-        public void setStatut(String statut) {
-            this.statut = statut;
->>>>>>> 950d9053b789bdde0fc7c020b2e11f6d2cf027d7
         }
 
         public double getChargeCpu() {

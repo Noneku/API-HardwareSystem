@@ -14,10 +14,7 @@ import java.util.List;
 @RequestMapping("/api/serveurs")
 @EnableScheduling
 @AllArgsConstructor
-<<<<<<< HEAD
 @CrossOrigin(origins = "http://localhost:4200")
-=======
->>>>>>> 950d9053b789bdde0fc7c020b2e11f6d2cf027d7
 public class ServeurController {
 
 
